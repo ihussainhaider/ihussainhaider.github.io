@@ -9,17 +9,20 @@
 <body>
     <header>
         <h1>Hussain Haider</h1>
-        <p>Computer Science Graduate | AI, ML, Data Science Enthusiast</p>
+        <p>Computer Science Graduate | Artificial Intelligence | Machine Learning | Data Science Enthusiast</p>
         <p>Email: <a href="mailto:hussain30185@iqraisb.edu.pk">hussain30185@iqraisb.edu.pk</a> | <a href="mailto:ihussainhaider1@gmail.com">ihussainhaider1@gmail.com</a></p>
         <p>Phone: (+92) 3430517774 | GitHub: <a href="https://github.com/ihussainhaider">ihussainhaider</a></p>
+        <button onclick="scrollToSection('about')">About Me</button>
+        <button onclick="scrollToSection('education')">Education</button>
+        <button onclick="scrollToSection('projects')">Projects</button>
     </header>
 
-    <section class="about">
+    <section id="about" class="about">
         <h2>About Me</h2>
         <p>A passionate computer science graduate with a strong foundation in AI, Machine Learning, Data Science, and Information Security. I am proficient in Python, C++, Java, and excited to pursue advanced studies to contribute to innovative research and real-world solutions.</p>
     </section>
 
-    <section class="education">
+    <section id="education" class="education">
         <h2>Education</h2>
         <ul>
             <li><strong>Bachelor of Science in Computer Science</strong> | IQRA University, Islamabad (2019 - 2023) - CGPA: 3.51/4.00</li>
@@ -28,27 +31,36 @@
         </ul>
     </section>
 
-    <section class="projects">
+    <section id="projects" class="projects">
         <h2>Academic Projects</h2>
         <div class="project">
             <h3>Medicine Investigation System</h3>
             <p>A Flutter-based mobile app integrated with blockchain and QR code technology to authenticate pharmaceuticals and combat counterfeit medicine.</p>
+            <button onclick="showDetails('project1')">View Details</button>
         </div>
+        <div id="project1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('project1')">&times;</span>
+                <h3>Medicine Investigation System - Details</h3>
+                <p>Developed a Flutter-based mobile app that integrates blockchain technology and QR code recognition to verify the legitimacy of pharmaceuticals. The app helps combat counterfeit medicine and ensures user safety by verifying the authenticity of medications in real time.</p>
+            </div>
+        </div>
+
         <div class="project">
             <h3>Flights Delay Data Analysis</h3>
             <p>Data analysis of flight delays using Python to uncover patterns and insights.</p>
+            <button onclick="showDetails('project2')">View Details</button>
         </div>
-        <div class="project">
-            <h3>Hostel Database Management System</h3>
-            <p>A database management system for hostel administration, automating tasks like room assignment, registration, and billing.</p>
-        </div>
-        <div class="project">
-            <h3>YouTube Video Downloader</h3>
-            <p>Built a Python-based app allowing users to download YouTube videos in multiple formats.</p>
+        <div id="project2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('project2')">&times;</span>
+                <h3>Flights Delay Data Analysis - Details</h3>
+                <p>Conducted comprehensive data analysis using Python, exploring flight delay data to uncover trends, patterns, and correlations that may assist in optimizing flight schedules and improving airline operations.</p>
+            </div>
         </div>
     </section>
 
-    <section class="research">
+    <section id="research" class="research">
         <h2>Research Directions</h2>
         <ul>
             <li>Artificial Intelligence and Machine Learning</li>
@@ -102,6 +114,9 @@
 
     <footer>
         <p>Contact me: <a href="mailto:hussain30185@iqraisb.edu.pk">hussain30185@iqraisb.edu.pk</a></p>
+        <button onclick="toggleTheme()">Toggle Dark/Light Theme</button>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

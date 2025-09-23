@@ -6,25 +6,40 @@ body {
   background: lch(88.12% 0.01 296.81 / 0.925);
   color: #333;
   scroll-behavior: smooth; /* smooth scroll */
+  overflow-x: hidden;
+  
 }
 
+/* Navbar */
 /* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
-  background: #222; /* dark background */
+  padding: 15px 5%;
+  background: #222;
   position: sticky;
   top: 0;
-  z-index: 1000;  
-  
+  z-index: 1000;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .logo {
   font-size: 20px;
   font-weight: bold;
-  color: #fff; /* white logo text */
+  color: #fff;
+}
+
+.name {
+  color: aliceblue;
+  font-weight: bold;
+  font-size: larger;
 }
 
 .nav-links {
@@ -35,15 +50,8 @@ body {
 
 .nav-links li a {
   text-decoration: none;
-  color: #ddd; /* light gray text */
+  color: #ddd;
   font-weight: 500;
-  
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1rem;
   position: relative;
   transition: color 0.3s ease;
 }
@@ -56,7 +64,7 @@ body {
   height: 2px;
   left: 0;
   bottom: -5px;
-  background: #0073e6; /* Accent color */
+  background: #0073e6;
   transition: width 0.3s ease;
 }
 
@@ -67,6 +75,68 @@ body {
 .nav-links a:hover::after {
   width: 100%;
 }
+
+/* Hamburger button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none; /* hide initially */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 5%;
+    background: #222;
+    padding: 15px;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex; /* show when active */
+  }
+
+  /* Hamburger animation to X */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+
 
      
     /* Hero section */
@@ -468,18 +538,19 @@ body {
 
 .contact-container {
  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  margin-top: 20px;
+  
 }
 
 .contact-card {
   background: #fff;
   border-radius: 12px;
-  padding: 20px 30px;
-  width: 200px;
+  padding: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+ 
 }
 
 .contact-card:hover {
@@ -518,7 +589,7 @@ footer {
   background: #222;
   color: #ddd;
   text-align: center;
-  padding: 20px 10%;
+  padding: 20px 5%;
   margin-top: 50px;
 }
 

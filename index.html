@@ -9,6 +9,7 @@
   <script src="port.js"></script>
   
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
 
 
 </head>
@@ -17,17 +18,29 @@
 <body>
 
   <!-- HEADER -->
-   <nav class="navbar">
+  <nav class="navbar">
+  <div class="navbar-left">
     <div class="logo">HH</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <div class="name">Hussain Haider</div>
+  </div>
+
+  <!-- Hamburger button -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
 
   <header>
   <div class="hero" data-aos="fade-up">
@@ -335,6 +348,29 @@
     </div>
   </div>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  const navItems = document.querySelectorAll('#nav-links li a');
+
+  // Toggle menu when hamburger is clicked
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+  });
+
+  // Close menu when any nav link is clicked
+  navItems.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      hamburger.classList.remove('active');
+    });
+  });
+});
+</script>
+
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>

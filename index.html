@@ -3,68 +3,348 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hussain Haider - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Hussain Haider | Portfolio</title>
+  <link rel="stylesheet" href="portStyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="port.js"></script>
+  
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
 </head>
+
+
 <body>
+
+  <!-- HEADER -->
+   <nav class="navbar">
+    <div class="logo">HH</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <header>
-    <div class="profile-img">
-      <img src="images/profile.jpg" alt="Profile Picture">
-    </div>
-    <h1>Hussain Haider</h1>
-    <p>Software Engineer | Developer | Passionate Learner</p>
-  </header>
+  <div class="hero" data-aos="fade-up">
+    <div class="hero-text">
+        <h1>Hello, I'm <span>Hussain Haider</span></h1>
+        <p>A passionate Computer Science graduate specializing in AI, ML, and Software Development.</p>
+        <div class="contact-info">
+            📧 <a href="mailto:ihussainhaider1@gmail.com">ihussainhaider1@gmail.com</a> | 
+            📍 Islamabad, Pakistan | 
+            📱 +92 3430517774
+        </div>
 
-  <div class="projects">
-    
-    <div class = "columns">
-      <h2>University Projects</h2>
-      <div class="project">
-        <h3>Medicine Investigation System</h3>
-        <p>Developed a Flutter based mobile application as final year university project for authenticating counterfeit medicine.</p>
-        <details>
-          <summary>Click for more</summary>
-          <a href="https://github.com/your-username/project1" target="_blank">View Project</a>
-        </details>
-      </div>
-      <div class="project">
-        <h3>Flights Delay Data Analysis (Data Science)</h3>
-        <p>DConducted a comprehensive data analysis on flight delays using Python and data science libraries to uncover patterns and insights</p>
-        <a href="https://github.com/your-username/project2" target="_blank">View Project</a>
-      </div>
-      <div class="project">
-        <h3>Hostel Database Management System</h3>
-        <p>database management system to facilitate hosteladministration, automating tasks like room assignment, student registration, improving data accessibility and efficiency.</p>
-        <a href="https://github.com/your-username/project2" target="_blank">View Project</a>
-      </div>
-      <div class="project">
-        <h3>YouTube Video Downloader (Python, Tkinter)</h3>
-        <p>Built a Python-based application allowing users to download YouTube videos in various formats, utilizing APIs and providing a simple, user-friendly interface for enhanced accessibility.</p>
-        <a href="https://github.com/your-username/project2" target="_blank">View Project</a>
-      </div>
-      <div class="project">
-        <h3>Student Prerequisite Subject Management System (C++ Data Structure)</h3>
-        <p>Console-based C++ project applying data structures to manage prerequisite subjects</p>
-        <a href="https://github.com/your-username/project2" target="_blank">View Project</a>
-      </div>
-      <div class="project">
-        <h3>Cryptographic Message Encode and Decode App (JAVA)</h3>
-        <p>Developed an encryption-decryption app using Java, enabling secure message encoding and decoding for privacy protection</p>
-        <a href="https://github.com/your-username/project2" target="_blank">View Project</a>
-      </div>
+        <div class="social-links">
+          <a href="https://github.com/ihussainhaider" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/ihussainhaider" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/ihussainhaider" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@ihussainhaider" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@ihussainhaider" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
 
     </div>
-      
-    <div class = "columns">
-      <h2>Technical  Skills</h2>
 
+    <div class="hero-img">
+      <img src="images/profile.jpg" alt="Hussain Haider">
     </div>
-    
   </div>
+</header>
 
+
+  <!-- NAVIGATION -->
+  
+
+  <!-- CONTENT -->
+  <section id="about" data-aos="fade-right">
+    <h2>About Me</h2>
+    <p>Computer Science graduate with expertise in programming, data analysis, and software development. 
+        Proficient in Python, C++, Java, and Flutter for cross-platform app development. 
+        Experienced in applying machine learning and blockchain concepts through academic projects. 
+        Recognized for academic excellence with multiple scholarships and certified in project management and Python. 
+        Passionate about solving real-world problems with innovative technology solutions.</p>
+  </section>
+
+  <!-- education -->
+  <section id="education" data-aos="fade-right">
+  <h2>Education</h2>
+  <div class="edu-timeline">
+
+    <div class="edu-card">
+      <h3>Bachelor of Science in Computer Science</h3>
+      <p><strong>Iqra University, Islamabad Campus, Pakistan</strong></p>
+      <p>CGPA: 3.51 / 4.00</p>
+      <p>Awarded academic scholarships in multiple semesters (2019, 2020, 2022).</p>
+    </div>
+
+    <div class="edu-card">
+      <h3>Higher Secondary School Certificate (Intermediate)</h3>
+      <p><strong>IMCB F/8-4, FBISE, Islamabad, Pakistan</strong></p>
+      <p>Percentage: 58.18%</p>
+    </div>
+
+    <div class="edu-card">
+      <h3>Secondary School Certificate (Matriculation)</h3>
+      <p><strong>IMCB I/8-3, FBISE, Islamabad, Pakistan</strong></p>
+      <p>Percentage: 78.57%</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <section id="projects" data-aos="fade-up">
+  <h2>University Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <h3>Medicine Investigation System</h3>
+      <p>Flutter-based mobile application developed as a final year project for authenticating counterfeit medicine.</p>
+      <span class="tech">Flutter • Dart • .Net • Database • Mobile App</span>
+      <button onclick="openModal('medicineModal')">View More</button>
+    </div>
+
+    <div class="project-card">
+      <h3>Flights Delay Data Analysis</h3>
+      <p>Comprehensive analysis of flight delays using Python and data science libraries to uncover patterns and insights.</p>
+      <span class="tech">Python • numPy • Pandas • Matplotlib • Data Science</span>
+      <button onclick="openModal('flightsModal')">View More</button>
+    </div>
+
+    <div class="project-card">
+      <h3>Hostel Database Management System</h3>
+      <p>Database system to facilitate hostel administration, automating tasks like room assignment and student registration.</p>
+      <span class="tech">Database • SQL</span>
+      <button onclick="openModal('hostelModal')">View More</button>
+    </div>
+
+    <div class="project-card">
+      <h3>YouTube Video Downloader</h3>
+      <p>Python-based application allowing users to download YouTube videos in various formats via APIs.</p>
+      <span class="tech">Python • Tkinter • Threading • ffmpeg • APIs</span>
+      <button onclick="openModal('youtubeModal')">View More</button>
+    </div>
+
+    <div class="project-card">
+      <h3>Student Prerequisite Subject Management System</h3>
+      <p>Console-based C++ project applying data structures to manage prerequisite subjects efficiently.</p>
+      <span class="tech">C++ • Data Structures</span>
+      <button onclick="openModal('studentModal')">View More</button>
+    </div>
+
+    <div class="project-card">
+      <h3>Cryptographic Message Encode & Decode App</h3>
+      <p>Java-based app enabling secure message encoding and decoding for privacy protection.</p>
+      <span class="tech">Java • Swing • Cryptography</span>
+      <button onclick="openModal('cryptoModal')">View More</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Modals -->
+<div id="medicineModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('medicineModal')">&times;</span>
+    <h3>Medicine Investigation System</h3>
+    <p>More details here: code snippet, UI/UX screenshots, etc.</p>
+  </div>
+</div>
+
+<div id="flightsModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('flightsModal')">&times;</span>
+    <h3>Flights Delay Data Analysis</h3>
+    <p>More details here: data visualizations, example Python code, etc.</p>
+  </div>
+</div>
+
+<div id="hostelModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('hostelModal')">&times;</span>
+    <h3>Hostel Database Management System</h3>
+    <p>More details here: ER diagram, database schema, etc.</p>
+  </div>
+</div>
+
+<div id="youtubeModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('youtubeModal')">&times;</span>
+    <h3>YouTube Video Downloader</h3>
+    <p>More details here: API usage, UI screenshots, etc.</p>
+  </div>
+</div>
+
+<div id="studentModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('studentModal')">&times;</span>
+    <h3>Student Prerequisite Subject Management System</h3>
+    <p>More details here: LinkedList C++ code snippet, flow diagram, etc.</p>
+  </div>
+</div>
+
+<div id="cryptoModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('cryptoModal')">&times;</span>
+    <h3>Cryptographic Message Encode & Decode App</h3>
+    <p>More details here: encryption algorithm example, UI screenshots, etc.</p>
+  </div>
+</div>
+
+
+
+  <section id="skills" data-aos="zoom-in">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-category">
+      <h3>Coding & Programming</h3>
+      <ul>
+        <li>Python</li>
+        <li>C++</li>
+        <li>Dart</li>
+        <li>Java</li>
+        <li>Object-Oriented Programming (OOP)</li>
+      </ul>
+    </div>
+
+    <div class="skill-category">
+      <h3>Frameworks & Tools</h3>
+      <ul>
+        <li>Flutter Framework</li>
+        <li>Visual Studio Code</li>
+        <li>Android Studio</li>
+        <li>MS Office (Word, Excel, PowerPoint)</li>
+      </ul>
+    </div>
+
+    <div class="skill-category">
+      <h3>Data & AI</h3>
+      <ul>
+        <li>Machine Learning</li>
+        <li>Data Science</li>
+        <li>Data Analysis</Data></li>
+      </ul>
+    </div>
+
+    <div class="skill-category">
+      <h3>Other Skills</h3>
+      <ul>
+        <li>Project Management</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="certifications" data-aos="fade-left">
+  <h2>Certifications</h2>
+  <div class="certs-grid">
+
+    <div class="cert-card">
+      <h3>Google (Coursera)</h3>
+      <ul>
+        <li>Project Management Foundations</li>
+        <li>Project Initiation</li>
+      </ul>
+      
+    </div>
+
+    <div class="cert-card">
+      <h3>University of Michigan (Coursera)</h3>
+      <Ul>
+        <li>Python for Everybody</li>
+      </Ul>
+      
+    </div>
+
+    <div class="cert-card">
+      <h3>Kaggle</h3>
+      <ul>
+          <li>Python</li>
+          <li>Intro to Machine Learning</li>
+          <li>Pandas</li>
+    </ul>
+    </div>
+
+    <div class="cert-card">
+      <h3>DigiSkills</h3>
+      <ul>
+        <li>Digital Marketing</li>
+        <li>Freelancing</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="languages" data-aos="fade-left">
+  <h2>Languages</h2>
+  <div class="lang-list">
+    <div class="lang-card">
+      <h3>English</h3>
+      <p>Professional Proficiency</p>
+    </div>
+    <div class="lang-card">
+      <h3>Urdu</h3>
+      <p>Fluent</p>
+    </div>
+    <div class="lang-card">
+      <h3>Pashto</h3>
+      <p>Native / Bilingual</p>
+    </div>
+  </div>
+</section>
+
+
+  <section id="contact" data-aos="zoom-in">
+  <h2>Contact</h2>
+  <div class="contact-container">
+
+    <div class="contact-card">
+      <i class="fas fa-envelope" style="font-size: medium; color: black;letter-spacing: 4px"> Email</i>
+      <p><a href="mailto:ihussainhaider1@gmail.com">ihussainhaider1@gmail.com</a></p>
+    </div>
+
+    <div class="contact-card">
+      <i class="fas fa-map-marker-alt" style="font-size: medium;  color: black;letter-spacing: 4px"> Location</i>
+      <p>Islamabad, Pakistan</p>
+    </div>
+
+    <div class="contact-card">
+      <i class="fas fa-phone" style="font-size: medium; color: black; letter-spacing: 4px;"> Phone</i>
+      <p>+92 3430517774</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
   <footer>
-    <p>Contact: ihussainhaider1@gmail.com</p>
-    <p>Follow me on <a href="https://www.linkedin.com/in/ihussainhaider" target="_blank">LinkedIn</a></p>
-  </footer>
+  <div class="footer-container">
+    <p>&copy; 2025 Hussain Haider. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="https://github.com/ihussainhaider" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/ihussainhaider" target="_blank">LinkedIn</a> |
+      <a href="https://www.youtube.com/@ihussainhaider" target="_blank">YouTube</a> |
+      <a href="https://www.instagram.com/ihussainhaider" target="_blank">Instagram</a> |
+      <a href="https://www.tiktok.com/@ihussainhaider" target="_blank">TikTok</a> 
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // animation speed in ms
+    once: false,     // <-- allow animations every time you scroll
+    mirror: true     // play animation only once
+  });
+</script>
+
+
 </body>
 </html>

@@ -1,0 +1,14 @@
+[
+  {
+    "title": "How I Built My Portfolio",
+    "date": "September 2025",
+    "excerpt": "A breakdown of the tools, frameworks, and design decisions behind my portfolio...",
+    "link": "posts/post1.html"
+  },
+  {
+    "title": "Getting Started with Machine Learning",
+    "date": "August 2025",
+    "excerpt": "An introduction to regression, classification, and how to start your ML journey...",
+    "link": "posts/post2.html"
+  }
+]

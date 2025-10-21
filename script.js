@@ -233,7 +233,6 @@ window.addEventListener('scroll', () => {
   });
 });
 
-
 // Contact Form Handling
 class ContactForm {
   constructor() {
@@ -253,32 +252,36 @@ class ContactForm {
       this.handleSubmit();
     });
 
-    // Add real-time validation
+    // Real-time validation on input change
     this.form.querySelectorAll('input, textarea').forEach(input => {
       input.addEventListener('blur', () => {
         this.validateField(input);
+      });
+      
+      // Clear validation when user starts typing
+      input.addEventListener('input', () => {
+        if (input.style.borderColor === 'rgb(239, 68, 68)') {
+          input.style.borderColor = '';
+        }
       });
     });
   }
 
   validateField(field) {
     const value = field.value.trim();
-    const isValid = field.checkValidity();
-
-    if (value === '') return;
-
-    if (isValid) {
-      field.style.borderColor = '#10b981';
-    } else {
-      field.style.borderColor = '#ef4444';
+    if (value === '') {
+      field.style.borderColor = '';
+      return;
     }
+
+    const isValid = field.checkValidity();
+    field.style.borderColor = isValid ? '#10b981' : '#ef4444';
   }
 
   async handleSubmit() {
     const submitBtn = this.form.querySelector('.form-submit');
     const formData = new FormData(this.form);
 
-    // Basic validation
     if (!this.isFormValid()) {
       this.showMessage('Please fill all required fields correctly.', 'error');
       return;
@@ -286,25 +289,26 @@ class ContactForm {
 
     // Show loading state
     submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="fas fa-spinner"></i> Sending...';
 
     try {
-      // Simulate API call - replace with your actual endpoint
       await this.sendFormData(formData);
-      
       this.showMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
       this.form.reset();
       
-      // Reset border colors
+      // Reset all field borders
       this.form.querySelectorAll('input, textarea').forEach(field => {
         field.style.borderColor = '';
       });
       
     } catch (error) {
+      console.error('Form submission error:', error);
       this.showMessage('Sorry, there was an error sending your message. Please try again.', 'error');
     } finally {
       // Reset button state
       submitBtn.classList.remove('loading');
+      submitBtn.disabled = false;
       submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
     }
   }
@@ -316,6 +320,12 @@ class ContactForm {
       if (!field.value.trim() || !field.checkValidity()) {
         isValid = false;
         field.style.borderColor = '#ef4444';
+        
+        // Add a small shake animation for invalid fields
+        field.style.animation = 'shake 0.5s ease-in-out';
+        setTimeout(() => {
+          field.style.animation = '';
+        }, 500);
       }
     });
     
@@ -323,10 +333,7 @@ class ContactForm {
   }
 
   async sendFormData(formData) {
-    // Replace this with your actual form submission logic
-    // Example using Fetch API:
-    /*
-    const response = await fetch('your-form-endpoint', {
+    const response = await fetch('https://formspree.io/f/myznabaa', {
       method: 'POST',
       body: formData,
       headers: {
@@ -335,16 +342,10 @@ class ContactForm {
     });
     
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
     
     return response.json();
-    */
-    
-    // Simulate API delay
-    return new Promise((resolve) => {
-      setTimeout(resolve, 2000);
-    });
   }
 
   showMessage(message, type) {
@@ -379,10 +380,34 @@ class ContactForm {
 
     // Auto-remove after 5 seconds
     setTimeout(() => {
-      messageDiv.remove();
+      if (messageDiv.parentNode) {
+        messageDiv.remove();
+      }
     }, 5000);
   }
 }
+
+// Add shake animation to CSS
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+document.head.appendChild(style);
 
 // Initialize contact form when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {

@@ -172,9 +172,13 @@ a{
   align-items: center;
   position: relative;
   z-index: 2;
+ 
   
 }
-
+.hero-content{
+   justify-content: center;
+   align-items: center;
+}
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -385,6 +389,7 @@ a{
     gap: 3rem;
     text-align: justify;
     align-items: center;
+    justify-content: center;
   }
   
   .hero h1 {
@@ -516,6 +521,7 @@ a{
 }
 
 .timeline-content {
+  border: 0.001px solid var(--border);
   background: white;
   padding: 2rem;
   border-radius: var(--radius);
@@ -691,6 +697,7 @@ a{
 }
 
 .skill-category {
+  border: 1px solid var(--border);
   background: white;
   padding: 2rem;
   border-radius: var(--radius);
@@ -1281,6 +1288,7 @@ a{
     grid-template-columns: 1fr;
     text-align: center;
     gap: 2rem;
+    justify-content: center;
   }
 
   .hero h1 {

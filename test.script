@@ -1,0 +1,249 @@
+// Project Data
+const projects = [
+    {
+        title: 'E-Commerce Platform',
+        details: 'Built a comprehensive e-commerce solution that handles product management, user authentication, shopping cart functionality, and secure payment processing.',
+        technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+        features: [
+            'User authentication and authorization',
+            'Product search and filtering',
+            'Real-time inventory updates',
+            'Secure payment processing with Stripe',
+            'Order tracking and history',
+            'Admin dashboard for product management'
+        ],
+        github: 'https://github.com',
+        demo: 'https://demo.com'
+    },
+    {
+        title: 'Task Management System',
+        details: 'Developed a productivity tool that enables teams to organize projects, assign tasks, set deadlines, and track progress in real-time.',
+        technologies: ['Vue.js', 'Firebase', 'Tailwind CSS'],
+        features: [
+            'Real-time collaboration',
+            'Drag-and-drop task organization',
+            'Team member assignments',
+            'Deadline notifications',
+            'Progress tracking and analytics',
+            'File attachments and comments'
+        ],
+        github: 'https://github.com'
+    },
+    {
+        title: 'Machine Learning Image Classifier',
+        details: 'Created a machine learning application that classifies images into various categories with high accuracy using deep learning techniques.',
+        technologies: ['Python', 'TensorFlow', 'Flask', 'React'],
+        features: [
+            'Custom CNN architecture',
+            'Image preprocessing pipeline',
+            'REST API for predictions',
+            'Web interface for uploads',
+            '95% classification accuracy',
+            'Support for multiple image formats'
+        ],
+        github: 'https://github.com'
+    },
+    {
+        title: 'Social Media Analytics Dashboard',
+        details: 'Built an analytics platform that aggregates data from multiple social media platforms and presents insights through interactive visualizations.',
+        technologies: ['Angular', 'D3.js', 'Express', 'PostgreSQL'],
+        features: [
+            'Multi-platform integration',
+            'Interactive data visualizations',
+            'Custom reporting tools',
+            'Engagement trend analysis',
+            'Automated scheduled reports',
+            'Export to PDF and CSV'
+        ],
+        demo: 'https://demo.com'
+    }
+];
+
+// Hamburger Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
+
+// Smooth Scrolling and Active Section
+const sections = document.querySelectorAll('section[id]');
+
+function updateActiveSection() {
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            if (navLink) navLink.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveSection);
+
+// Navbar Background on Scroll
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        navbar.style.background = 'rgba(10, 10, 26, 0.85)';
+        navbar.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.3)';
+    } else {
+        navbar.style.background = 'rgba(10, 10, 26, 0.7)';
+        navbar.style.boxShadow = 'none';
+    }
+});
+
+// Project Modal
+const modal = document.getElementById('projectModal');
+const modalClose = document.querySelector('.modal-close');
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+        openModal(index);
+    });
+});
+
+function openModal(projectIndex) {
+    const project = projects[projectIndex];
+    
+    document.getElementById('modalTitle').textContent = project.title;
+    document.getElementById('modalDetails').textContent = project.details;
+    
+    // Technologies
+    const techContainer = document.getElementById('modalTechnologies');
+    techContainer.innerHTML = '';
+    project.technologies.forEach(tech => {
+        const tag = document.createElement('span');
+        tag.className = 'tag';
+        tag.textContent = tech;
+        techContainer.appendChild(tag);
+    });
+    
+    // Features
+    const featuresList = document.getElementById('modalFeatures');
+    featuresList.innerHTML = '';
+    project.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        featuresList.appendChild(li);
+    });
+    
+    // Links
+    const githubBtn = document.getElementById('modalGithub');
+    const demoBtn = document.getElementById('modalDemo');
+    
+    if (project.github) {
+        githubBtn.style.display = 'inline-flex';
+        githubBtn.href = project.github;
+    } else {
+        githubBtn.style.display = 'none';
+    }
+    
+    if (project.demo) {
+        demoBtn.style.display = 'inline-flex';
+        demoBtn.href = project.demo;
+    } else {
+        demoBtn.style.display = 'none';
+    }
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+modalClose.addEventListener('click', closeModal);
+
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        closeModal();
+    }
+});
+
+// Contact Form
+const contactForm = document.querySelector('.contact-form');
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    // Here you would typically send the form data to a server
+    console.log('Form submitted:', { name, email, subject, message });
+    
+    // Show success message (you can customize this)
+    alert('Thank you for your message! I will get back to you soon.');
+    
+    // Reset form
+    contactForm.reset();
+});
+
+// Scroll Animation Observer
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, observerOptions);
+
+// Observe all cards and sections for scroll animations
+const animateElements = document.querySelectorAll(
+    '.project-card, .skill-card, .cert-card, .language-card, .blog-card, .timeline-item'
+);
+
+animateElements.forEach(el => {
+    el.classList.add('scroll-animate');
+    observer.observe(el);
+});
+
+// Parallax Effect for Hero Image
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const heroImage = document.querySelector('.hero-image');
+    
+    if (heroImage && scrolled < window.innerHeight) {
+        heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+    }
+});
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    updateActiveSection();
+    
+    // Add stagger animation to cards
+    animateElements.forEach((el, index) => {
+        el.style.transitionDelay = `${index * 0.1}s`;
+    });
+});

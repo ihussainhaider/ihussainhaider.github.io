@@ -4,48 +4,395 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | Hussain Haider</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="blog.css">
 </head>
 <body>
+  <!-- Navigation -->
   <nav class="navbar">
-    <div class="navbar-left">
-      <div class="logo">HH</div>
-      <div class="name">Hussain Haider</div>
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-code"></i>
+        <span>Hussain Haider</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="blog.html" class="nav-link active">Blog</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
-    </ul>
   </nav>
 
-  <section class="blog-list">
-    <h1>My Blog</h1>
-
-    <div class="blog-card">
-      <p >Page Under Construction.....</p>
-      <div class="back-to-blog"> 
-        <a href="../index.html">← Back to Home</a>
+  <!-- Blog Header -->
+  <section class="blog-header">
+    <div class="container">
+      <div class="blog-hero" data-aos="fade-up">
+        <h1>This Blog page is under development and all the information here are dummy</h1>
+        <p>Sharing insights about web development, programming, and technology</p>
+        <div class="blog-stats">
+          <div class="stat">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Articles</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">5.2K</span>
+            <span class="stat-label">Reads</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">8</span>
+            <span class="stat-label">Categories</span>
+          </div>
+        </div>
       </div>
-      
     </div>
-
-  
-
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-  <div class="footer-container">
-    <p>&copy; 2025 Hussain Haider. All rights reserved.</p>
-    <div class="footer-socials">
-      <a href="https://github.com/ihussainhaider" target="_blank">GitHub</a> |
-      <a href="https://www.linkedin.com/in/ihussainhaider" target="_blank">LinkedIn</a> |
-      <a href="https://www.youtube.com/@ihussainhaider" target="_blank">YouTube</a> |
-      <a href="https://www.instagram.com/ihussainhaider" target="_blank">Instagram</a> |
-      <a href="https://www.tiktok.com/@ihussainhaider" target="_blank">TikTok</a> 
+  <!-- Blog Content -->
+  <section class="blog-content">
+    <div class="container">
+      <div class="blog-layout">
+        <!-- Main Blog Posts -->
+        <main class="blog-main">
+          <!-- Featured Post -->
+          <article class="blog-post featured" data-aos="fade-up">
+            <div class="post-badge">Featured</div>
+            <div class="post-image">
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="React Hooks">
+            </div>
+            <div class="post-content">
+              <div class="post-meta">
+                <span class="post-date">October 10, 2024</span>
+                <span class="post-category">Web Development</span>
+              </div>
+              <h2 class="post-title">Getting Started with React Hooks</h2>
+              <p class="post-excerpt">Learn how to use React Hooks to simplify your component logic and manage state effectively. This comprehensive guide covers useState, useEffect, and custom hooks with practical examples.</p>
+              <div class="post-footer">
+                <div class="post-stats">
+                  <span class="read-time">5 min read</span>
+                  <span class="comments">24 comments</span>
+                </div>
+                <a href="blog.html" class="read-more">Read Full Article <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Regular Posts Grid -->
+          <div class="posts-grid">
+            <!-- Post 1 -->
+            <article class="blog-post" data-aos="fade-up" data-aos-delay="100">
+              <div class="post-image">
+                <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Node.js APIs">
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span class="post-date">September 25, 2024</span>
+                  <span class="post-category">Backend</span>
+                </div>
+                <h2 class="post-title">Building Scalable APIs with Node.js</h2>
+                <p class="post-excerpt">Best practices for creating robust and scalable RESTful APIs using Node.js and Express. Learn about middleware, error handling, and performance optimization.</p>
+                <div class="post-footer">
+                  <span class="read-time">8 min read</span>
+                  <a href="blog.html" class="read-more">Read More</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 2 -->
+            <article class="blog-post" data-aos="fade-up" data-aos-delay="200">
+              <div class="post-image">
+                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Machine Learning">
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span class="post-date">September 12, 2024</span>
+                  <span class="post-category">AI/ML</span>
+                </div>
+                <h2 class="post-title">Introduction to Machine Learning</h2>
+                <p class="post-excerpt">A beginner-friendly guide to understanding the fundamentals of machine learning and AI. Explore different algorithms and their real-world applications.</p>
+                <div class="post-footer">
+                  <span class="read-time">10 min read</span>
+                  <a href="blog.html" class="read-more">Read More</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 3 -->
+            <article class="blog-post" data-aos="fade-up" data-aos-delay="300">
+              <div class="post-image">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Flutter Development">
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span class="post-date">August 28, 2024</span>
+                  <span class="post-category">Mobile</span>
+                </div>
+                <h2 class="post-title">Flutter for Cross-Platform Development</h2>
+                <p class="post-excerpt">Why Flutter is becoming the go-to framework for cross-platform mobile development. Learn about its advantages and how to get started.</p>
+                <div class="post-footer">
+                  <span class="read-time">6 min read</span>
+                  <a href="blog.html" class="read-more">Read More</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 4 -->
+            <article class="blog-post" data-aos="fade-up" data-aos-delay="400">
+              <div class="post-image">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Data Science">
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span class="post-date">August 15, 2024</span>
+                  <span class="post-category">Data Science</span>
+                </div>
+                <h2 class="post-title">Data Analysis with Python Pandas</h2>
+                <p class="post-excerpt">Master data manipulation and analysis with Python's Pandas library. Essential techniques for data cleaning, transformation, and visualization.</p>
+                <div class="post-footer">
+                  <span class="read-time">7 min read</span>
+                  <a href="blog.html" class="read-more">Read More</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 5 -->
+            <article class="blog-post" data-aos="fade-up" data-aos-delay="500">
+              <div class="post-image">
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Git Best Practices">
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span class="post-date">August 2, 2024</span>
+                  <span class="post-category">Tools</span>
+                </div>
+                <h2 class="post-title">Git Best Practices for Teams</h2>
+                <p class="post-excerpt">Effective Git workflows and collaboration strategies for development teams. Learn branching strategies, commit conventions, and code review practices.</p>
+                <div class="post-footer">
+                  <span class="read-time">5 min read</span>
+                  <a href="blog.html" class="read-more">Read More</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 6 -->
+            <article class="blog-post" data-aos="fade-up" data-aos-delay="600">
+              <div class="post-image">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="CSS Grid">
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span class="post-date">July 20, 2024</span>
+                  <span class="post-category">Web Design</span>
+                </div>
+                <h2 class="post-title">Mastering CSS Grid Layout</h2>
+                <p class="post-excerpt">Complete guide to CSS Grid for modern web layouts. Learn grid properties, responsive techniques, and practical examples for complex designs.</p>
+                <div class="post-footer">
+                  <span class="read-time">8 min read</span>
+                  <a href="blog.html" class="read-more">Read More</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination">
+            <a href="#" class="page-btn disabled">
+              <i class="fas fa-chevron-left"></i> Previous
+            </a>
+            <div class="page-numbers">
+              <a href="#" class="page-number active">1</a>
+              <a href="#" class="page-number">2</a>
+              <a href="#" class="page-number">3</a>
+              <span class="page-dots">...</span>
+              <a href="#" class="page-number">8</a>
+            </div>
+            <a href="#" class="page-btn">
+              Next <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="blog-sidebar" data-aos="fade-left">
+          <!-- Search -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Search</h3>
+            <div class="search-box">
+              <input type="text" placeholder="Search articles...">
+              <button class="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Categories</h3>
+            <ul class="categories-list">
+              <li><a href="#">Web Development <span>5</span></a></li>
+              <li><a href="#">Mobile Development <span>3</span></a></li>
+              <li><a href="#">Data Science <span>4</span></a></li>
+              <li><a href="#">AI/ML <span>2</span></a></li>
+              <li><a href="#">DevOps <span>3</span></a></li>
+              <li><a href="#">Career <span>2</span></a></li>
+            </ul>
+          </div>
+
+          <!-- Popular Posts -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Popular Posts</h3>
+            <div class="popular-posts">
+              <div class="popular-post">
+                <div class="popular-post-image">
+                  <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="React Hooks">
+                </div>
+                <div class="popular-post-content">
+                  <h4>Getting Started with React Hooks</h4>
+                  <span class="post-date">Oct 10, 2024</span>
+                </div>
+              </div>
+              <div class="popular-post">
+                <div class="popular-post-image">
+                  <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Node.js">
+                </div>
+                <div class="popular-post-content">
+                  <h4>Building Scalable APIs</h4>
+                  <span class="post-date">Sep 25, 2024</span>
+                </div>
+              </div>
+              <div class="popular-post">
+                <div class="popular-post-image">
+                  <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Machine Learning">
+                </div>
+                <div class="popular-post-content">
+                  <h4>Introduction to ML</h4>
+                  <span class="post-date">Sep 12, 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Newsletter</h3>
+            <div class="newsletter-box">
+              <p>Get the latest posts delivered right to your inbox.</p>
+              <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="newsletter-btn">
+                  <i class="fas fa-paper-plane"></i> Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <!-- Brand Column -->
+      <div class="footer-column">
+        <div class="footer-brand">
+          <div class="footer-logo">Hussain Haider</div>
+          <p class="footer-description">
+            Computer Science Graduate specializing in AI, ML, and Software Development. 
+            Passionate about building innovative solutions and solving complex problems.
+          </p>
+          <div class="footer-socials">
+            <a href="https://github.com/ihussainhaider" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ihussainhaider" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.youtube.com/@ihussainhaider" target="_blank" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/ihussainhaider" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@ihussainhaider" target="_blank" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://wa.me/+923430517774" target="_blank" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="footer-column">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#education">Education</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services Column -->
+      <div class="footer-column">
+        <h3 class="footer-title">Services</h3>
+        <ul class="footer-links">
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Mobile Apps</a></li>
+          <li><a href="#">Data Analysis</a></li>
+          <li><a href="#">AI/ML Solutions</a></li>
+          <li><a href="#">Software Consulting</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info Column -->
+      <div class="footer-column">
+        <h3 class="footer-title">Contact Info</h3>
+        <div class="footer-contact">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:ihussainhaider1@gmail.com">ihussainhaider1@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+923430517774">+92 3430517774</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/+923430517774">+92 3430517774</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Islamabad, Pakistan</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <div class="copyright">
+          <p>&copy; 2025 Hussain Haider. All rights reserved.</p>
+        </div>
+        
+      </div>
     </div>
   </div>
 </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script src="blog.js"></script>
 </body>
 </html>
